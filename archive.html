@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Project Archive | Wardana Dwi Mulia</title>
+    <meta name="author" content="Wardana Dwi Mulia">
+    <meta name="description" content="A complete archive of projects by Warda">
+    <meta name="robots" content="noindex, follow">
+
+    <link id="favicon-ico" rel="icon" href="./favicon.ico" sizes="any">
+    <link id="favicon-apple" rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <link rel="preload" href="./assets/data/content.json" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="./assets/data/icons.json" as="fetch" crossorigin="anonymous">
+
+    <script src="./src/js/main.js" type="module"></script>
+</head>
+<body id="page-archive" class="loading-content">
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">Hi!</a>
+            <div class="nav__actions">
+                <button type="button" class="nav__action-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="icon-light" data-icon-key="theme-on"></span>
+                    <span class="icon-dark" data-icon-key="theme-off"></span>
+                </button>
+                <button type="button" class="nav__action-btn" id="lang-toggle" aria-label="Toggle language">EN</button>
+                <button type="button" class="nav__action-btn nav__menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span data-icon-key="menu-open"></span>
+                    <span data-icon-key="menu-close"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="app-root">
+        </main>
+
+</body>
+</html>

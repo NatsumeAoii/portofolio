@@ -1,0 +1,146 @@
+{
+  "_shared": {
+    "contact": {
+      "email": "wardana.dwi.mulia@gmail.com"
+    },
+    "experience": [
+      { "id": "job_1", "company": "LSP Informatika", "period": "2019 - 2023" },
+      { "id": "job_2", "company": "PT Wijaya Karya", "period": "2018 - 2022 (Contract - Seasonal - Full Time)" },
+      { "id": "job_3", "company": "Lazada Logistics", "period": "2019 - 2021 (Seasonal - Part Time)" }
+    ],
+    "projects": [
+      { "id": "dnd5e-quickref", "tags": ["game", "reference"], "image": "./assets/images/dnd5e.webp", "live_url": "https://natsumeaoii.github.io/dnd5e-quickref/", "code_url": "https://github.com/NatsumeAoii/dnd5e-quickref" },
+      { "id": "hoyolab-auto-signin", "tags": ["tools", "game"], "image": "./assets/images/hoyolab.webp", "live_url": null, "code_url": "https://github.com/NatsumeAoii/Hoyolab-AutoSign" },
+      { "id": "rpg-char-gen", "tags": ["game", "tools"], "image": "./assets/images/aetheris.webp", "live_url": "https://natsumeaoii.github.io/Fantasy-2.0/", "code_url": "https://github.com/NatsumeAoii/Fantasy-2.0" }, 
+      { "id": "wsu", "tags": ["tools", "windows"], "image": "./assets/images/WSU.webp", "live_url": null, "code_url": "https://github.com/NatsumeAoii/Windows-Storage-Utility" },
+      { "id": "scammer-revenger", "tags": ["tools", "backend"], "image": "./assets/images/scammer.webp", "live_url": null, "code_url": "https://github.com/NatsumeAoii/Scammer-Revenger" }     
+    ]
+  },
+
+  "en": {
+    "meta": { "home_title": "Wardana Dwi Mulia", "archive_title": "Project Archive | Wardana Dwi Mulia", "notFound_title": "404 Not Found" },
+    "nav": { "about": "About", "experience": "Experience", "projects": "Projects", "contact": "Contact" },
+    "hero": { 
+      "greeting": "Hello, I'm", 
+      "name": "Wardana Dwi Mulia.", 
+      "tagline": "Build efficiency through technology.", 
+      "description": "I am an Informatics graduate with analytical skills and a desire to learn. I am open to administrative or operational roles where I can grow and contribute to the company, both as part of a team and individually" 
+    },
+    "about": { 
+      "title": "About Me", 
+      "p1": "My education taught me how to break down complex problems. I have applied this in various roles, from administration to logistics, always focusing on efficiency and accuracy.", 
+      "p2": "I am actively seeking a role where I can learn from the ground up. I am a dedicated and adaptable employee who is not afraid of new challenges and is eager to grow professionally.", 
+      "skills_title": "Core Skills", 
+      "skills": ["Microsoft Office", "Google Workspace", "Data Entry", "Data Analysis", "Database Management", "MySQL", "Quality Assurance", "Manual Testing", "Manual Debugging", "Python", "Node.js", "Java", "Lua", "Google Apps Script", "GitHub", "Game Localization", "AI Tools (Gemini, ChatGPT)"] 
+    },
+    "experience": {
+      "title": "Experience",
+      "job_content": {
+        "job_1": { "role": "Office Administrator", "description": "Summarized exam result data for over 500 participants, tested CRUD functionality of the admin website, and managed assessor scheduling and assessment administration." },
+        "job_2": { "role": "Contract Employee (Production & QC)", "description": "Responsible for various production stages (Operator, Finishing, Cable Assembly), performing quality control to maintain standards, and contributing to work process efficiency improvements." },
+        "job_3": { "role": "Logistics Staff (Packer, Picker, Sorter)", "description": "Performed high-accuracy item packing (meeting a target of 100 packs/hour), as well as picking and sorting processes to accelerate the distribution workflow." }
+      }
+    },
+    "projects": { 
+      "title": "Projects", 
+      "archive_title": "All Projects", 
+      "archive_btn_text": "View Full Project Archive", 
+      "filters": { 
+        "all": "All", 
+        "backend": "Back-End", 
+        "tools": "Tools", 
+        "game": "Game Dev", 
+        "windows": "Windows", 
+        "reference": "Reference" 
+      } 
+    },
+    "project_content": {
+      "wsu": { 
+        "title": "Windows Storage Utility (WSU)", 
+        "description": "An enhanced batch script for automating system maintenance and repair on Windows using tools like CHKDSK, SFC, and DISM. Features real-time progress tracking and detailed logging." 
+      },
+      "hoyolab-auto-signin": { 
+        "title": "Hoyolab-Auto-Signln", 
+        "description": "A lightweight and secure script to automatically collect HoYoLAB daily check-in rewards. Supports Genshin Impact, Honkai Impact 3rd, and Honkai: Star Rail and runs on Google Apps Script." 
+      },
+      "scammer-revenger": { 
+        "title": "Scammer Revenger", 
+        "description": "A Node.js application designed to automate sending messages to a list of URLs, typically for disrupting scam operations. Requires Node.js and npm." 
+      },
+      "dnd5e-quickref": { 
+        "title": "D&D 5e Quick Reference Sheet", 
+        "description": "A quick reference sheet for D&D 5e, detailing rules for Movement, Actions, Bonus Actions, and Reactions." 
+      },
+      "rpg-char-gen": {
+        "title": "World of Aetheris - RPG Char Gen",
+        "description": "A fun, simple random RPG character generator. Users can enter their name and start to generate a character in the fantasy world of Aetheris."
+      }
+    },
+    "contact": { "title": "Get In Touch", "description": "My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!" },
+    "errors": { "notFound": { "title": "404 - Page Not Found", "description": "The page you are looking for does not exist. It might have been moved or deleted.", "button": "Return to Home" } }
+  },
+
+
+  "id": {
+    "meta": { "home_title": "Wardana Dwi Mulia", "archive_title": "Arsip Proyek | Wardana Dwi Mulia", "notFound_title": "404 Tidak Ditemukan" },
+    "nav": { "about": "Tentang", "experience": "Pengalaman", "projects": "Proyek", "contact": "Kontak" },
+    "hero": { 
+      "greeting": "Halo, saya", 
+      "name": "Wardana Dwi Mulia.", 
+      "tagline": "Membangun efisiensi melalui teknologi.", 
+      "description": "Saya seorang lulusan Informatika dengan kemampuan analitis dan keinginan untuk belajar. Saya terbuka untuk posisi administratif atau operasional di mana saya bisa berkembang dan berkontribusi kepada perusahaan, baik secara tim maupun individu." 
+    },
+    "about": { 
+      "title": "Tentang Saya", 
+      "p1": "Pendidikan saya mengajari saya cara menguraikan masalah yang kompleks. Saya telah menerapkan ini di berbagai posisi, dari administrasi hingga logistik, dengan selalu fokus pada efisiensi dan akurasi.", 
+      "p2": "Saya sedang aktif mencari posisi di mana saya bisa belajar dari awal. Saya adalah karyawan yang berdedikasi dan mudah beradaptasi, tidak takut akan tantangan baru, dan bersemangat untuk berkembang secara profesional.",
+      "skills_title": "Keterampilan Inti", 
+      "skills": ["Microsoft Office", "Google Workspace", "Data Entry", "Analisis Data", "Manajemen Database", "MySQL", "Quality Assurance", "Pengujian Manual", "Debugging Manual", "Python", "Node.js", "Java", "Lua", "Google Apps Script", "GitHub", "Lokalisasi Game", "Alat AI (Gemini, ChatGPT)"] 
+    },
+    "experience": {
+      "title": "Pengalaman",
+      "job_content": {
+        "job_1": { "role": "Office Administrator", "description": "Merangkum data hasil ujian untuk >500 peserta, menguji fungsionalitas CRUD situs web admin, dan mengelola penjadwalan assessor serta administrasi penilaian." },
+        "job_2": { "role": "Pegawai Kontrak (Produksi & QC)", "description": "Bertanggung jawab pada berbagai tahap produksi (Operator, Finishing, Perakitan Kabel), melakukan quality control untuk menjaga standar, dan berkontribusi pada peningkatan efisiensi proses kerja." },
+        "job_3": { "role": "Staf Logistik (Packer, Picker, Sorter)", "description": "Melakukan pengemasan barang dengan akurasi tinggi (mencapai target 100 pack/jam), serta proses picking dan sorting untuk mempercepat alur distribusi." }
+      }
+    },
+    "projects": { 
+      "title": "Proyek", 
+      "archive_title": "Semua Proyek", 
+      "archive_btn_text": "Lihat Arsip Proyek Lengkap", 
+      "filters": { 
+        "all": "Semua", 
+        "backend": "Back-End", 
+        "tools": "Alat", 
+        "game": "Game Dev", 
+        "windows": "Windows", 
+        "reference": "Referensi" 
+      } 
+    },
+    "project_content": {
+      "wsu": { 
+        "title": "Windows Storage Utility (WSU)", 
+        "description": "Script batch untuk otomatisasi pemeliharaan dan perbaikan sistem Windows menggunakan alat bawaan seperti CHKDSK, SFC, dan DISM. Dilengkapi dengan pelacakan progres *real-time* dan pencatatan (log) yang terperinci." 
+      },
+      "hoyolab-auto-signin": { 
+        "title": "Hoyolab-Auto-Signln", 
+        "description": "Script ringan dan aman untuk mengumpulkan hadiah harian HoYoLAB secara otomatis. Mendukung Genshin Impact, Honkai Impact 3rd, dan Honkai: Star Rail serta berjalan di Google Apps Script." 
+      },
+      "scammer-revenger": { 
+        "title": "Scammer Revenger", 
+        "description": "Aplikasi Node.js untuk mengirim pesan otomatis. Dibuat dengan tujuan untuk mengganggu aktivitas penipu di dunia maya. Membutuhkan Node.js dan npm untuk berjalan." 
+      },
+      "dnd5e-quickref": { 
+        "title": "D&D5e Quick Reference Sheet", 
+        "description": "Sebuah lembar referensi D&D5e, merinci aturan untuk Pergerakan (Movement), Aksi (Actions), Aksi Bonus (Bonus Actions), dan Reaksi (Reactions)." 
+      },
+      "rpg-char-gen": {
+        "title": "World of Aetheris - RPG Char Gen",
+        "description": "Aplikasi sederhana untuk membuat karakter RPG secara acak. Pengguna cukup memasukkan nama dan menekan 'Start' untuk membuat karakter di dunia fantasi Aetheris."
+      }
+    },
+    "contact": { "title": "Hubungi Saya", "description": "Inbox saya selalu terbuka. Baik Kamu punya pertanyaan atau hanya ingin menyapa, saya akan berusaha sebaik mungkin untuk membalas Kamu!" },
+    "errors": { "notFound": { "title": "404 - Halaman Tidak Ditemukan", "description": "Halaman yang Anda cari tidak ada. Mungkin telah dipindahkan atau dihapus.", "button": "Kembali ke Beranda" } }
+  }
+}

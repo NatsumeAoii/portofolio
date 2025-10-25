@@ -1,0 +1,22 @@
+{
+    "name": "personal-portfolio",
+    "version": "1.0.0",
+    "description": "Personal portfolio website source code.",
+    "private": true,
+    "scripts": {
+      "lint": "npm run lint:js && npm run lint:css",
+      "lint:js": "eslint . --ext .js",
+      "lint:css": "stylelint \"**/*.css\"",
+      "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix"
+    },
+    "devDependencies": {
+      "csso-cli": "^4.0.2",
+      "eslint": "^8.57.0",
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-plugin-import": "^2.29.1",
+      "html-minifier": "^4.0.0",
+      "stylelint": "^16.6.1",
+      "stylelint-config-standard": "^36.0.0",
+      "terser": "^5.31.0"
+    }
+  }

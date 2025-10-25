@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Metadata -->
+    <title>Wardana Dwi Mulia</title>
+    <meta name="author" content="NatsumeAoii">
+    <meta name="description" content="Portfolio of Wardana Dwi Mulia.">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wardana Dwi Mulia",
+      "url": "https://your-portfolio-url.com",
+      "jobTitle": "",
+      "sameAs": [
+        "https://github.com",
+        "https://linkedin.com"
+      ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link id="favicon-ico" rel="icon" href="/favicon.ico" sizes="any">
+    <link id="favicon-apple" rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Styles & Scripts -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <link rel="preload" href="./assets/data/content.json" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="./assets/data/icons.json" as="fetch" crossorigin="anonymous">
+
+    <script src="./src/js/main.js" type="module"></script>
+</head>
+<body id="page-home" class="loading-content">
+
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">Hi!</a>
+            <ul class="nav__list" id="main-menu">
+                <li class="nav__item"><a href="#about" class="nav__link" data-content-key="nav.about">About</a></li>
+                <li class="nav__item"><a href="#experience" class="nav__link" data-content-key="nav.experience">Experience</a></li>
+                <li class="nav__item"><a href="#projects" class="nav__link" data-content-key="nav.projects">Projects</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link" data-content-key="nav.contact">Contact</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button type="button" class="nav__action-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="icon-light" data-icon-key="theme-on"></span>
+                    <span class="icon-dark" data-icon-key="theme-off"></span>
+                </button>
+                <button type="button" class="nav__action-btn" id="lang-toggle" aria-label="Toggle language">EN</button>
+                <button type="button" class="nav__action-btn nav__menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span data-icon-key="menu-open"></span>
+                    <span data-icon-key="menu-close"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="app-root">
+        <!-- Content is rendered by main.js -->
+    </main>
+
+    <a href="#" class="scroll-top" aria-label="Scroll to top">
+        <span data-icon-key="scroll-top"></span>
+    </a>
+</body>
+</html>
