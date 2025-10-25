@@ -28,17 +28,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Cache node_modules
-        id: cache-node-modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-20-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-20-
-
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Run Linters
@@ -58,28 +48,17 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Cache node_modules
-        id: cache-node-modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-20-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-20-
-
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Build and Minify Project
         run: npm run build
 
-      - name: Compress Images
-        uses: image-actions/compress-images@v1.0.1
+      - name: Compress images
+        uses: calibreapp/image-actions@main
         with:
-          compress_images_path: "dist"
-          compress_images_enabled: true
-          compress_images_quality: 85 # Adjust quality (0-100)
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
@@ -96,4 +75,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4```
