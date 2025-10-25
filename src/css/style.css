@@ -186,8 +186,6 @@ img {
   justify-content: center;
   align-items: center;
   z-index: 200;
-
-  /* ADDED: Smooth fade-out transition */
   opacity: 1;
   transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
   visibility: visible;
@@ -238,7 +236,7 @@ img {
  * 3. LAYOUT & UTILITY CLASSES
  * =================================================================================================
  */
-
+ 
 .container {
     margin-left: auto;
     margin-right: auto;
