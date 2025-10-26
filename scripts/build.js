@@ -18,8 +18,6 @@ const DIRS = [
 ];
 
 console.log('Starting build process...');
-
-// 1. Create directory structure
 console.log('Creating output directories...');
 DIRS.forEach((dir) => {
   if (!fs.existsSync(dir)) {
@@ -27,7 +25,6 @@ DIRS.forEach((dir) => {
   }
 });
 
-// 2. Minify HTML
 console.log('Minifying HTML...');
 const htmlMinifierOptions = [
   '--collapse-whitespace',
@@ -39,16 +36,12 @@ const htmlMinifierOptions = [
   '--minify-js true',
 ].join(' ');
 
-exec(`npx html-minifier ${htmlMinifierOptions} -o dist/index.html index.html`);
-exec(`npx html-minifier ${htmlMinifierOptions} -o dist/404.html 404.html`);
-exec(`npx html-minifier ${htmlMinifierOptions} -o dist/archive.html archive.html`);
+exec(`npx html-minifier-terser ${htmlMinifierOptions} -o dist/index.html index.html`);
+exec(`npx html-minifier-terser ${htmlMinifierOptions} -o dist/404.html 404.html`);
+exec(`npx html-minifier-terser ${htmlMinifierOptions} -o dist/archive.html archive.html`);
 
-// --- START OF JS FIX ---
-console.log('Minifying JavaScript...');
-// Replaced 'terser' with 'esbuild' and updated flags
-exec('npx esbuild src/js/config.js --minify --format=esm --outfile=dist/src/js/config.js');
-exec('npx esbuild src/js/main.js --minify --format=esm --outfile=dist/src/js/main.js');
-// --- END OF JS FIX ---
+console.log('Bundling and minifying JavaScript...');
+exec('npx esbuild src/js/main.js --bundle --minify --format=esm --outfile=dist/src/js/main.js');
 
 console.log('Minifying CSS...');
 exec('npx lightningcss --minify src/css/style.css -o dist/src/css/style.css');
