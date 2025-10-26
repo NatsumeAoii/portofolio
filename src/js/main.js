@@ -415,7 +415,7 @@ class PortfolioApp {
       const companyName = this._escapeHTML(job.company);
       return `
           <button type="button"
-              role="tab" // <-- ADD THIS LINE
+              role="tab"
               class="experience__tab-btn ${activeClass}"
               data-index="${index}">
               ${companyName}
