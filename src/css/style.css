@@ -830,14 +830,14 @@ img {
  * =================================================================================================
  */
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
     .container {
         padding-left: var(--space-lg);
         padding-right: var(--space-lg);
     }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     #page-home {
         scroll-snap-type: y mandatory;
     }
@@ -910,7 +910,7 @@ img {
     }
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
     .nav__menu-toggle {
         display: block;
     }
@@ -943,7 +943,7 @@ img {
     }
 }
 
-@media (min-width: 1440px) {
+@media (width >= 1440px) {
     :root {
         --font-size-base: 18px;
     }
