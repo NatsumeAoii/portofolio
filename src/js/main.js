@@ -28,6 +28,170 @@ const Utils = {
 };
 
 /**
+ * Manages dynamic, viewport-aware tooltips that follow the cursor.
+ */
+class TooltipManager {
+  constructor(delay = 500) {
+    this.delay = delay;
+    this.tooltipEl = null;
+    this.showTimeout = null;
+    this.currentTarget = null;
+    this.createTooltipElement();
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+  }
+
+  createTooltipElement() {
+    this.tooltipEl = document.createElement('div');
+    this.tooltipEl.className = 'tooltip';
+    this.tooltipEl.setAttribute('role', 'tooltip');
+    document.body.appendChild(this.tooltipEl);
+  }
+
+  bind(container) {
+    container.addEventListener('mouseover', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) this.handleMouseOver(target, e);
+    });
+
+    container.addEventListener('mouseout', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) this.handleMouseOut(target);
+    });
+
+    container.addEventListener('focusin', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) this.handleFocusIn(target);
+    });
+
+    container.addEventListener('focusout', (e) => {
+      const target = e.target.closest('[data-tooltip]');
+      if (target) this.handleFocusOut(target);
+    });
+  }
+
+  handleMouseOver(target, initialEvent) {
+    this.currentTarget = target;
+    clearTimeout(this.showTimeout);
+    this.showTimeout = setTimeout(() => {
+      if (this.currentTarget !== target) return;
+      target.classList.add('tooltip-active');
+      this.show(target);
+      this.positionTooltip(initialEvent);
+      target.addEventListener('mousemove', this.handleMouseMove);
+    }, this.delay);
+  }
+
+  handleMouseOut(target) {
+    if (this.currentTarget === target) {
+      clearTimeout(this.showTimeout);
+      target.removeEventListener('mousemove', this.handleMouseMove);
+      this.hide();
+      this.currentTarget = null;
+    }
+  }
+
+  handleMouseMove(e) {
+    this.positionTooltip(e);
+  }
+
+  handleFocusIn(target) {
+    this.currentTarget = target;
+    clearTimeout(this.showTimeout);
+    this.showTimeout = setTimeout(() => {
+      if (this.currentTarget !== target) return;
+      target.classList.add('tooltip-active');
+      this.show(target);
+      this.positionTooltip(target);
+    }, this.delay);
+  }
+
+  handleFocusOut(target) {
+    if (this.currentTarget === target) {
+      clearTimeout(this.showTimeout);
+      this.hide();
+      this.currentTarget = null;
+    }
+  }
+
+  show(target) {
+    this.setTooltipContent(target);
+    this.tooltipEl.classList.add('visible');
+  }
+
+  hide() {
+    if (this.currentTarget) {
+      this.currentTarget.classList.remove('tooltip-active');
+    }
+    this.tooltipEl.classList.remove('visible', 'tooltip--marquee');
+    this.tooltipEl.innerHTML = '';
+  }
+
+  setTooltipContent(target) {
+    const key = target.dataset.tooltipKey;
+    const staticText = target.dataset.tooltip;
+
+    if (key === 'tooltips.copyright') {
+      try {
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, ' ');
+        const date = new Date();
+        const formattedDate = date.toLocaleString(navigator.language || 'en-US', {
+          day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
+        });
+        const marqueeText = Utils.escapeHTML(formattedDate);
+
+        this.tooltipEl.classList.add('tooltip--marquee');
+        this.tooltipEl.innerHTML = `
+          <span class="tooltip__static-text">${Utils.escapeHTML(timezone)} -&nbsp;</span>
+          <div class="tooltip__marquee-container">
+            <div class="tooltip__marquee-wrapper">
+              <span class="tooltip__marquee-text">${marqueeText}</span>
+              <span class="tooltip__marquee-text" aria-hidden="true">${marqueeText}</span>
+            </div>
+          </div>`;
+      } catch (error) {
+        console.warn('Could not generate dynamic tooltip:', error);
+        this.tooltipEl.textContent = staticText;
+      }
+    } else {
+      this.tooltipEl.textContent = staticText;
+    }
+  }
+
+  positionTooltip(source) {
+    const isMouseEvent = source instanceof MouseEvent;
+    const gap = 15;
+    let top = 0;
+    let left = 0;
+
+    // Temporarily show to measure dimensions
+    const initialVisibility = this.tooltipEl.style.visibility;
+    this.tooltipEl.style.visibility = 'hidden';
+    this.tooltipEl.classList.add('visible');
+    const tipRect = this.tooltipEl.getBoundingClientRect();
+    this.tooltipEl.style.visibility = initialVisibility;
+
+    if (isMouseEvent) {
+      top = source.clientY - tipRect.height - gap;
+      left = source.clientX - (tipRect.width / 2);
+      if (top < gap) top = source.clientY + gap;
+    } else { // It's a target element for focus
+      const targetRect = source.getBoundingClientRect();
+      top = targetRect.top - tipRect.height - gap;
+      left = targetRect.left + (targetRect.width / 2) - (tipRect.width / 2);
+      if (top < gap) top = targetRect.bottom + gap;
+    }
+
+    if (left < gap) {
+      left = gap;
+    } else if (left + tipRect.width > window.innerWidth - gap) {
+      left = window.innerWidth - tipRect.width - gap;
+    }
+
+    this.tooltipEl.style.transform = `translate(${Math.round(left)}px, ${Math.round(top)}px)`;
+  }
+}
+
+/**
  * Manages the application's state.
  */
 class StateManager {
@@ -276,8 +440,19 @@ class UIManager {
     });
 
     this.renderPageSpecificContent(langData);
-    this.renderSharedContent();
+    this.renderSharedContent(langData);
     this.hideLoadingState();
+  }
+
+  applyTooltips(langData) {
+    document.querySelectorAll('[data-tooltip-key]').forEach((el) => {
+      const tooltipText = Utils.getNestedProperty(langData, el.dataset.tooltipKey);
+      if (tooltipText) {
+        el.setAttribute('data-tooltip', tooltipText);
+      } else {
+        el.setAttribute('data-tooltip', '');
+      }
+    });
   }
 
   renderPageSpecificContent(langData) {
@@ -288,11 +463,15 @@ class UIManager {
     pageRenderers[this.state.pageId]?.();
   }
 
-  renderSharedContent() {
+  renderSharedContent(langData) {
     const socialLinksContainer = document.getElementById('social-links-container');
     const copyrightNotice = document.getElementById('copyright-notice');
     if (socialLinksContainer) this.renderSocials(socialLinksContainer);
-    if (copyrightNotice) copyrightNotice.textContent = `© ${new Date().getFullYear()}`;
+    if (copyrightNotice) {
+      copyrightNotice.textContent = `© ${new Date().getFullYear()}`;
+      copyrightNotice.setAttribute('data-tooltip-key', 'tooltips.copyright');
+    }
+    this.applyTooltips(langData);
   }
 
   renderHomePageContent(langData) {
@@ -305,6 +484,7 @@ class UIManager {
       if (email) {
         contactEmailLink.href = `mailto:${email}`;
         contactEmailLink.textContent = email;
+        contactEmailLink.setAttribute('data-tooltip-key', 'tooltips.email');
       }
     }
   }
@@ -386,14 +566,15 @@ class UIManager {
     const filters = langData.projects?.filters || {};
     container.innerHTML = projects.map((p) => this.createProjectCard(p, filters)).join('');
     this.reObserveDynamicContent();
+    this.applyTooltips(langData);
   }
 
   createProjectCard(project, filters) {
     const tagsHTML = (project.tags || [])
       .map((tag) => `<span class="project-card__tag">${Utils.escapeHTML(filters[tag] || tag)}</span>`)
       .join('');
-    const liveLink = project.live_url ? `<a href="${Utils.escapeHTML(project.live_url)}" class="project-card__link" target="_blank" rel="noopener noreferrer">Live Demo</a>` : '';
-    const codeLink = project.code_url ? `<a href="${Utils.escapeHTML(project.code_url)}" class="project-card__link" target="_blank" rel="noopener noreferrer">View Code</a>` : '';
+    const liveLink = project.live_url ? `<a href="${Utils.escapeHTML(project.live_url)}" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="View live demo for ${Utils.escapeHTML(project.title)}" data-tooltip-key="tooltips.liveDemo">Live Demo</a>` : '';
+    const codeLink = project.code_url ? `<a href="${Utils.escapeHTML(project.code_url)}" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="View source code for ${Utils.escapeHTML(project.title)}" data-tooltip-key="tooltips.viewCode">View Code</a>` : '';
     const imageSrc = project.image || '';
     const webpSrc = imageSrc.startsWith('http') ? imageSrc : imageSrc.replace(/\.(jpe?g|png)$/i, '.webp');
 
@@ -415,7 +596,7 @@ class UIManager {
 
   renderSocials(container) {
     container.innerHTML = (this.config.socialLinks || []).map((social) => `
-      <a href="${social.url}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="${social.name}">
+      <a href="${social.url}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="${social.name}" data-tooltip-key="tooltips.social.${social.name.toLowerCase()}">
         <span data-icon-key="${social.iconKey || social.name}"></span>
       </a>`).join('');
     this.populateIcons(container);
@@ -498,6 +679,7 @@ class App {
     this.state = new StateManager(config);
     this.dataService = new DataService(config);
     this.ui = new UIManager(this.state, config);
+    this.tooltipManager = new TooltipManager();
   }
 
   async init() {
@@ -511,6 +693,7 @@ class App {
       this.ui.populateIcons();
       this.ui.applyTheme();
       this.bindEventListeners();
+      this.tooltipManager.bind(document.body);
       this.ui.renderPageLayout();
       this.ui.applyLanguage();
     } catch (error) {

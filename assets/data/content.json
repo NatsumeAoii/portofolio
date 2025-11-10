@@ -77,7 +77,21 @@
       }
     },
     "contact": { "title": "Get In Touch", "description": "My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!" },
-    "errors": { "notFound": { "title": "404 - Page Not Found", "description": "The page you are looking for does not exist. It might have been moved or deleted.", "button": "Return to Home" } }
+    "errors": { "notFound": { "title": "404 - Page Not Found", "description": "The page you are looking for does not exist. It might have been moved or deleted.", "button": "Return to Home" } },
+    "tooltips": {
+      "toggleTheme": "Toggle theme",
+      "toggleLang": "Switch language",
+      "scrollTop": "Scroll to top",
+      "liveDemo": "View live demo",
+      "viewCode": "View source code",
+      "email": "Send me an email",
+      "copyright": "Your current local time",
+      "social": {
+        "github": "Visit my GitHub",
+        "linkedin": "Connect on LinkedIn",
+        "discord": "Join Discord"
+      }
+    }
   },
 
 
@@ -141,6 +155,20 @@
       }
     },
     "contact": { "title": "Hubungi Saya", "description": "Inbox saya selalu terbuka. Baik Kamu punya pertanyaan atau hanya ingin menyapa, saya akan berusaha sebaik mungkin untuk membalas Kamu!" },
-    "errors": { "notFound": { "title": "404 - Halaman Tidak Ditemukan", "description": "Halaman yang Anda cari tidak ada. Mungkin telah dipindahkan atau dihapus.", "button": "Kembali ke Beranda" } }
+    "errors": { "notFound": { "title": "404 - Halaman Tidak Ditemukan", "description": "Halaman yang Anda cari tidak ada. Mungkin telah dipindahkan atau dihapus.", "button": "Kembali ke Beranda" } },
+    "tooltips": {
+      "toggleTheme": "Ubah tema",
+      "toggleLang": "Ganti bahasa",
+      "scrollTop": "Gulir ke atas",
+      "liveDemo": "Lihat demo langsung",
+      "viewCode": "Lihat kode sumber",
+      "email": "Kirim saya email",
+      "copyright": "Waktu lokal Anda saat ini",
+      "social": {
+        "github": "Kunjungi GitHub saya",
+        "linkedin": "Terhubung di LinkedIn",
+        "discord": "Bergabung dengan Discord"
+      }
+    }
   }
 }

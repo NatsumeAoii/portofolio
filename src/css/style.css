@@ -521,6 +521,66 @@ img, picture, svg {
     width: 100%;
 }
 
+/* Tooltip */
+[data-tooltip].tooltip-active {
+    cursor: help;
+}
+
+.tooltip {
+    background-color: var(--color-text-primary);
+    border-radius: var(--border-radius-sm);
+    color: var(--color-background);
+    font-size: 0.875rem;
+    font-weight: 500;
+    left: 0;
+    max-width: 320px;
+    opacity: 0;
+    padding: var(--space-xs) var(--space-sm);
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: opacity 150ms var(--transition-timing-function);
+    visibility: hidden;
+    white-space: nowrap;
+    z-index: 210;
+}
+
+.tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip--marquee {
+    display: flex;
+    align-items: center;
+}
+
+.tooltip__static-text {
+    flex-shrink: 0;
+}
+
+.tooltip__marquee-container {
+    overflow: hidden;
+    flex-shrink: 1;
+    min-width: 100px;
+}
+
+.tooltip__marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+}
+
+.tooltip__marquee-text {
+    padding-right: 2rem;
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
 /*
  * =================================================================================================
  * 5. PAGE-SPECIFIC STYLES
