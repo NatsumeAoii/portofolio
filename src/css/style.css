@@ -162,7 +162,7 @@ ul {
     list-style: none;
 }
 
-img {
+img, picture, svg {
     display: block;
     height: auto;
     max-width: 100%;
@@ -567,7 +567,7 @@ img {
 .hero__tagline {
     color: var(--color-text-secondary);
     display: block;
-    font-size: 4rem;
+    font-size: clamp(2rem, 8vw, 4rem);
 }
 
 .hero__description {
@@ -715,11 +715,6 @@ img {
     width: 100%;
 }
 
-/* * ---------------------------------
- * FIXED: Moved .project-grid (general rule) before #page-home .project-grid (specific rule)
- * to fix the no-descending-specificity error.
- * ---------------------------------
- */
 .project-grid {
     display: grid;
     gap: var(--space-lg);

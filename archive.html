@@ -6,11 +6,11 @@
     
     <title>Project Archive | Wardana Dwi Mulia</title>
     <meta name="author" content="Wardana Dwi Mulia">
-    <meta name="description" content="A complete archive of projects by Warda">
+    <meta name="description" content="A complete archive of projects by Wardana Dwi Mulia">
     <meta name="robots" content="noindex, follow">
 
-    <link id="favicon-ico" rel="icon" href="./favicon.ico" sizes="any">
-    <link id="favicon-apple" rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link id="favicon-ico" rel="icon" href="favicon.ico" sizes="any">
+    <link id="favicon-apple" rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link rel="stylesheet" href="./src/css/style.css">
 
@@ -20,15 +20,16 @@
     <script src="./src/js/main.js" type="module"></script>
 </head>
 <body id="page-archive" class="loading-content">
+    <!-- NOTE: The header is duplicated across HTML files. For improved maintainability,
+         consider using a static site generator or server-side includes in the future. -->
     <header class="header">
         <nav class="nav container">
             <a href="./index.html" class="nav__logo">Hi!</a>
-            
             <ul class="nav__list" id="main-menu">
-                <li class="nav__item"><a href="/#about" class="nav__link" data-content-key="nav.about">About</a></li>
-                <li class="nav__item"><a href="/#experience" class="nav__link" data-content-key="nav.experience">Experience</a></li>
-                <li class="nav__item"><a href="/#projects" class="nav__link" data-content-key="nav.projects">Projects</a></li>
-                <li class="nav__item"><a href="/#contact" class="nav__link" data-content-key="nav.contact">Contact</a></li>
+                <li class="nav__item"><a href="./index.html#about" class="nav__link" data-content-key="nav.about">About</a></li>
+                <li class="nav__item"><a href="./index.html#experience" class="nav__link" data-content-key="nav.experience">Experience</a></li>
+                <li class="nav__item"><a href="./index.html#projects" class="nav__link" data-content-key="nav.projects">Projects</a></li>
+                <li class="nav__item"><a href="./index.html#contact" class="nav__link" data-content-key="nav.contact">Contact</a></li>
             </ul>
             <div class="nav__actions">
                 <button type="button" class="nav__action-btn" id="theme-toggle" aria-label="Toggle theme">
@@ -45,7 +46,8 @@
     </header>
 
     <main id="app-root">
-        </main>
+        <!-- Content is rendered by main.js -->
+    </main>
 
 </body>
 </html>

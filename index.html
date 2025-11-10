@@ -25,8 +25,8 @@
     </script>
 
     <!-- Favicon -->
-    <link id="favicon-ico" rel="icon" href="/favicon.ico" sizes="any">
-    <link id="favicon-apple" rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link id="favicon-ico" rel="icon" href="favicon.ico" sizes="any">
+    <link id="favicon-apple" rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Styles & Scripts -->
     <link rel="stylesheet" href="./src/css/style.css">
@@ -38,10 +38,8 @@
 </head>
 <body id="page-home" class="loading-content">
 
-    <div class="loader-container" id="loader">
-        <div class="loader"></div>
-    </div>
-
+    <!-- NOTE: The header is duplicated across HTML files. For improved maintainability,
+         consider using a static site generator or server-side includes in the future. -->
     <header class="header">
         <nav class="nav container">
             <a href="./index.html" class="nav__logo">Hi!</a>
@@ -69,7 +67,11 @@
         <!-- Content is rendered by main.js -->
     </main>
 
-    <a href="#" class="scroll-top" aria-label="Scroll to top">
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <a href="#page-home" class="scroll-top" aria-label="Scroll to top">
         <span data-icon-key="scroll-top"></span>
     </a>
 </body>
