@@ -5,6 +5,7 @@ import { useLanguage } from '@/components/ui/LanguageContext';
 import { APP_CONFIG } from '@/data/config';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from '@/utils/assets';
 
 export function Projects() {
     const { content, shared } = useLanguage();
@@ -24,7 +25,7 @@ export function Projects() {
                     {featuredProjects.map((project) => (
                         <article key={project.id} className="project-card reveal">
                             <Image
-                                src={project.image}
+                                src={getAssetPath(project.image)}
                                 alt={project.title || ''}
                                 className="project-card__image"
                                 width={800}

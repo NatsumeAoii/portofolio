@@ -1,17 +1,18 @@
 export const APP_CONFIG = {
-    dataCacheVersion: 'v1.0.0',
+    dataCacheVersion: '1.0.0',
     defaultLanguage: 'en',
-    defaultTheme: 'light',
+    defaultTheme: 'dark',
+    basePath: '/portofolio', // Must match next.config.ts
     observerOptions: {
         root: null,
-        rootMargin: '0px 0px -50px 0px',
-        threshold: 0.1,
+        rootMargin: '0px',
+        threshold: 0.1
     },
-    featuredProjectsCount: 4,
+    featuredProjectsCount: 3,
     scrollDebounceDelay: 100,
     socialLinks: [
-        { name: 'GitHub', iconKey: 'GitHub', url: 'https://github.com/natsumeaoii' },
-        { name: 'LinkedIn', iconKey: 'LinkedIn', url: 'https://linkedin.com/in/wardanadwimulia/' },
-        { name: 'Discord', iconKey: 'Discord', url: 'https://discord.com/users/natsumeaoi' },
-    ],
+        { name: 'GitHub', url: 'https://github.com/NatsumeAoii', iconKey: 'GitHub' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/wardanadwimulia/', iconKey: 'LinkedIn' },
+        { name: 'Discord', url: 'https://discordapp.com/users/243726663985659905', iconKey: 'Discord' }
+    ]
 };

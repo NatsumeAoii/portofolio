@@ -5,8 +5,8 @@ import { Header } from "@/components/layout/Header";
 import { useLanguage } from '@/components/ui/LanguageContext';
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ScrollTop } from '@/components/ui/ScrollTop';
-
 import Image from 'next/image';
+import { getAssetPath } from '@/utils/assets';
 
 export default function Archive() {
     const { content, shared } = useLanguage();
@@ -45,7 +45,7 @@ export default function Archive() {
                             {filteredProjects.map((project) => (
                                 <article key={project.id} className="project-card reveal">
                                     <Image
-                                        src={project.image}
+                                        src={getAssetPath(project.image)}
                                         alt={project.title || ''}
                                         className="project-card__image"
                                         width={800}

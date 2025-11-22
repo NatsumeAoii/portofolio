@@ -1,5 +1,6 @@
 import React from 'react';
 import iconsData from '@/data/icons.json';
+import { getAssetPath } from '@/utils/assets';
 
 interface IconProps {
     name: string;
@@ -22,7 +23,7 @@ export const Icon: React.FC<IconProps> = ({ name, className }) => {
 
     return (
         <img
-            src={iconContent}
+            src={getAssetPath(iconContent)}
             alt=""
             className={`icon-img ${className || ''}`}
             aria-hidden="true"
