@@ -1,24 +1,27 @@
 {
-  "name": "personal-portfolio",
-  "version": "1.0.0",
-  "description": "Personal portfolio website source code.",
+  "name": "temp_app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint . --ext .js",
-    "lint:css": "stylelint \"**/*.css\"",
-    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
-    "build": "rimraf dist && node scripts/build.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "framer-motion": "^12.23.24",
+    "next": "16.0.3",
+    "next-themes": "^0.4.6",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "esbuild": "^0.23.0",
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "html-minifier-terser": "^7.2.0",
-    "lightningcss-cli": "^1.25.1",
-    "rimraf": "^6.0.1",
-    "stylelint": "^16.6.1",
-    "stylelint-config-standard": "^36.0.0"
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.3",
+    "typescript": "^5"
   }
 }

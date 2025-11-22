@@ -1,4 +1,4 @@
-name: Deploy Next.js to GitHub Pages
+name: Lint, Build, and Deploy to GitHub Pages
 
 on:
   push:
@@ -15,8 +15,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build Next.js
+  lint:
+    name: Run Code Linters
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -31,13 +31,39 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Next.js
+      - name: Run Linters
+        run: npm run lint
+
+  build:
+    name: Build Project
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and Minify Project
         run: npm run build
 
-      - name: Upload artifact
+      - name: Compress images
+        uses: calibreapp/image-actions@main
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './out'
+          path: './dist'
 
   deploy:
     name: Deploy to GitHub Pages

@@ -24,21 +24,36 @@
       "greeting": "Hello, I'm", 
       "name": "Wardana Dwi Mulia.", 
       "tagline": "Build efficiency through technology.", 
-      "description": "I am an Informatics graduate with analytical skills and a desire to learn. I am open to administrative or operational roles where I can grow and contribute to the company, both as part of a team and individually" 
+      "description": "I am an Informatics graduate with strong analytical skills and a continuous learning mindset. I am open to administrative or operational positions where I can contribute effectively and grow within the company, both in team settings and independent roles." 
     },
     "about": { 
       "title": "About Me", 
-      "p1": "My education taught me how to break down complex problems. I have applied this in various roles, from administration to logistics, always focusing on efficiency and accuracy.", 
-      "p2": "I am actively seeking a role where I can learn from the ground up. I am a dedicated and adaptable employee who is not afraid of new challenges and is eager to grow professionally.", 
+      "p1": "My education trained me to analyze and simplify complex problems. I have applied this in roles ranging from administration to logistics, consistently focusing on efficiency and accuracy.", 
+      "p2": "I am actively seeking a role where I can build my experience from the ground up. I am dedicated, adaptable, and ready to take on new challenges to grow professionally.", 
       "skills_title": "Core Skills", 
-      "skills": ["Microsoft Office", "Google Workspace", "Data Entry", "Data Analysis", "Database Management", "MySQL", "Quality Assurance", "Manual Testing", "Manual Debugging", "Python", "Node.js", "Java", "Lua", "Google Apps Script", "GitHub", "Game Localization", "AI Tools (Gemini, ChatGPT)"] 
+      "skills": [  
+        "Microsoft Office",
+        "Google Workspace",
+        "Data Entry",
+        "Database Management",
+        "Manual Testing",
+        "MySQL",
+        "Python",
+        "Node.js",
+        "Java",
+        "Lua",
+        "Google Apps Script",
+        "GitHub",
+        "Localization",
+        "AI Productivity Tools"
+      ] 
     },
     "experience": {
       "title": "Experience",
       "job_content": {
-        "job_1": { "role": "Office Administrator", "description": "Summarized exam result data for over 500 participants, tested CRUD functionality of the admin website, and managed assessor scheduling and assessment administration." },
-        "job_2": { "role": "Contract Employee (Production & QC)", "description": "Responsible for various production stages (Operator, Finishing, Cable Assembly), performing quality control to maintain standards, and contributing to work process efficiency improvements." },
-        "job_3": { "role": "Logistics Staff (Packer, Picker, Sorter)", "description": "Performed high-accuracy item packing (meeting a target of 100 packs/hour), as well as picking and sorting processes to accelerate the distribution workflow." }
+        "job_1": { "role": "Office Administrator", "description": "Summarized exam result data for over 500 participants, tested CRUD functionality on the internal admin website, and managed assessor scheduling and assessment administration." },
+        "job_2": { "role": "Contract Employee (Production & QC)", "description": "Handled various production stages (operator, finishing, and cable assembly), performed quality control to maintain standards, and contributed to improving workflow efficiency." },
+        "job_3": { "role": "Logistics Staff (Packer, Picker, Sorter)", "description": "Performed high-accuracy item packing (meeting a target of 100 packs/hour), and executed picking and sorting processes to support efficient distribution operations." }
       }
     },
     "projects": { 
@@ -88,21 +103,36 @@
       "greeting": "Halo, saya", 
       "name": "Wardana Dwi Mulia.", 
       "tagline": "Membangun efisiensi melalui teknologi.", 
-      "description": "Saya seorang lulusan Informatika dengan kemampuan analitis dan keinginan untuk belajar. Saya terbuka untuk posisi administratif atau operasional di mana saya bisa berkembang dan berkontribusi kepada perusahaan, baik secara tim maupun individu." 
+      "description": "Saya lulusan Informatika dengan kemampuan analitis dan semangat belajar yang tinggi. Saya terbuka untuk posisi administratif atau operasional di mana saya dapat berkontribusi dan berkembang, baik dalam tim maupun bekerja mandiri." 
     },
     "about": { 
       "title": "Tentang Saya", 
-      "p1": "Pendidikan saya mengajari saya cara menguraikan masalah yang kompleks. Saya telah menerapkan ini di berbagai posisi, dari administrasi hingga logistik, dengan selalu fokus pada efisiensi dan akurasi.", 
-      "p2": "Saya sedang aktif mencari posisi di mana saya bisa belajar dari awal. Saya adalah karyawan yang berdedikasi dan mudah beradaptasi, tidak takut akan tantangan baru, dan bersemangat untuk berkembang secara profesional.",
+      "p1": "Pendidikan saya mengajarkan cara menganalisis dan menyederhanakan masalah yang kompleks. Hal ini telah saya terapkan dalam berbagai peran, dari administrasi hingga logistik, dengan fokus pada efisiensi dan ketelitian.", 
+      "p2": "Saya sedang mencari posisi di mana saya dapat membangun pengalaman dari dasar. Saya berdedikasi, mudah beradaptasi, dan siap menghadapi tantangan baru untuk berkembang secara profesional.",
       "skills_title": "Keterampilan Inti", 
-      "skills": ["Microsoft Office", "Google Workspace", "Data Entry", "Analisis Data", "Manajemen Database", "MySQL", "Quality Assurance", "Pengujian Manual", "Debugging Manual", "Python", "Node.js", "Java", "Lua", "Google Apps Script", "GitHub", "Lokalisasi Game", "Alat AI (Gemini, ChatGPT)"] 
+      "skills": [        
+        "Microsoft Office",
+        "Google Workspace",
+        "Data Entry",
+        "Manajemen Database",
+        "Pengujian Manual",
+        "MySQL",
+        "Python",
+        "Node.js",
+        "Java",
+        "Lua",
+        "Google Apps Script",
+        "GitHub",
+        "Lokalisasi",
+        "AI Productivity Tools"
+      ] 
     },
     "experience": {
       "title": "Pengalaman",
       "job_content": {
-        "job_1": { "role": "Office Administrator", "description": "Merangkum data hasil ujian untuk >500 peserta, menguji fungsionalitas CRUD situs web admin, dan mengelola penjadwalan assessor serta administrasi penilaian." },
-        "job_2": { "role": "Pegawai Kontrak (Produksi & QC)", "description": "Bertanggung jawab pada berbagai tahap produksi (Operator, Finishing, Perakitan Kabel), melakukan quality control untuk menjaga standar, dan berkontribusi pada peningkatan efisiensi proses kerja." },
-        "job_3": { "role": "Staf Logistik (Packer, Picker, Sorter)", "description": "Melakukan pengemasan barang dengan akurasi tinggi (mencapai target 100 pack/jam), serta proses picking dan sorting untuk mempercepat alur distribusi." }
+        "job_1": { "role": "Office Administrator", "description": "Merangkum data hasil ujian untuk lebih dari 500 peserta, menguji fungsionalitas CRUD pada situs admin internal, serta mengelola penjadwalan assessor dan administrasi penilaian." },
+        "job_2": { "role": "Pegawai Kontrak (Produksi & QC)", "description": "Menangani berbagai tahap produksi (operator, finishing, perakitan kabel), melakukan quality control untuk menjaga standar, dan berkontribusi dalam peningkatan efisiensi alur kerja." },
+        "job_3": { "role": "Staf Logistik (Packer, Picker, Sorter)", "description": "Melakukan pengemasan barang dengan akurasi tinggi (target 100 pack/jam), serta proses picking dan sorting untuk mendukung kelancaran distribusi." }
       }
     },
     "projects": { 
