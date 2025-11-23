@@ -8,7 +8,7 @@ export const APP_CONFIG = {
         rootMargin: '0px',
         threshold: 0.1
     },
-    featuredProjectsCount: 3,
+    featuredProjectsCount: 4,
     scrollDebounceDelay: 100,
     socialLinks: [
         { name: 'GitHub', url: 'https://github.com/NatsumeAoii', iconKey: 'GitHub' },

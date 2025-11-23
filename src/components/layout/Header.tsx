@@ -37,10 +37,10 @@ export function Header() {
                     Hi!
                 </Link>
                 <ul className={`nav__list ${isMenuOpen ? 'visible' : ''}`} id="main-menu">
-                    <li className="nav__item"><a href="#about" className="nav__link" onClick={closeMenu}>{content.nav.about}</a></li>
-                    <li className="nav__item"><a href="#experience" className="nav__link" onClick={closeMenu}>{content.nav.experience}</a></li>
-                    <li className="nav__item"><a href="#projects" className="nav__link" onClick={closeMenu}>{content.nav.projects}</a></li>
-                    <li className="nav__item"><a href="#contact" className="nav__link" onClick={closeMenu}>{content.nav.contact}</a></li>
+                    <li className="nav__item"><Link href="/#about" className="nav__link" onClick={closeMenu}>{content.nav.about}</Link></li>
+                    <li className="nav__item"><Link href="/#experience" className="nav__link" onClick={closeMenu}>{content.nav.experience}</Link></li>
+                    <li className="nav__item"><Link href="/#projects" className="nav__link" onClick={closeMenu}>{content.nav.projects}</Link></li>
+                    <li className="nav__item"><Link href="/#contact" className="nav__link" onClick={closeMenu}>{content.nav.contact}</Link></li>
                 </ul>
                 <div className="nav__actions">
                     <ThemeToggle />
